@@ -33,7 +33,7 @@ def test_uthread():
     r.run_qemu(shell_script([
         'task3'
     ]))
-    expected = ['thread id 3 exec (4|5|6) ticks', 'thread id 1 exec (12|13|11) ticks', 'thread id 2 exec (24|25|23) ticks']
+    expected = ['thread id 3 exec (4|5|3) ticks', 'thread id 1 exec (12|13|11) ticks', 'thread id 2 exec (24|25|23) ticks']
     if not re.findall('\n'.join(expected), r.qemu.output, re.M):
         raise AssertionError('Output does not match expected output')
 
